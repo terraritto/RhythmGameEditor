@@ -46,3 +46,9 @@ LPB 数字で指定する
 
 ## ダウンロード先
 [ダウンロード](https://www.amazon.co.jp/clouddrive/share/8N4jsZmzANleWi5zMhZIC67xdmSGF1PCLENhRt4J54M)
+
+# 見つかってるエラー
+* 上書き保存が効かない
+* 上レーンのWallNotesの制約忘れ(WallNotesは1\~6なので、7\~12についての制約が必要)
+
+時間あるときに直します......
