@@ -54,6 +54,6 @@ Musicフォルダに利用したい音楽を入れてください.  　
 ## ダウンロード先
 [ダウンロード](https://www.amazon.co.jp/clouddrive/share/IlLaY1wxjosqOd9j7DRJX4pMy7lIkOhuqMkDnc6A69g)
 
-#version
+## version
 ver.1.1に変わりました。  
 変更点は version.txt につけておいたのでそのファイルを見て確認して頂けるとありがたいです。
