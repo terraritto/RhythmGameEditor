@@ -26,7 +26,8 @@ MusicLoadMenu::~MusicLoadMenu()
 		
 		//ファイルが存在するので、Musicを作成する
 		std::shared_ptr<Music> music = std::make_unique<Music>();
-		music->SetMusicHandle("Music\\" + mFileName);
+		std::string musicName = "Music\\" + mFileName;
+		music->SetMusicHandle(musicName.c_str());
 		music->SetTotalMusicTime();
 		mStartMenu->SetMusic(std::move(music)); //渡してやる
 	}

@@ -35,10 +35,10 @@ StartMenu::StartMenu(Game* game)
 
 	//new save
 	TextInf textNewSave("New Save", 570, 0,GetColor(0,0,255),20);
-	mExplainInput = TextInf("新規作成するファイル名(.csv指定)", xOffset, 0, GetColor(0, 0, 255), 20);
+	mExplainNewSave = TextInf("新規作成するファイル名(.csv指定)", xOffset, 0, GetColor(0, 0, 255), 20);
 	AddButton(textNewSave, [this]()
 		{
-			new NewSaveMenu(mGame, mExplainInput, this);
+			new NewSaveMenu(mGame, mExplainNewSave, this);
 		}
 	);
 	//save
@@ -68,7 +68,14 @@ StartMenu::StartMenu(Game* game)
 				music->MusicStart();
 				for (auto object : this->GetNoteObjects())
 				{
-					object->SetIsSound();
+					int bpmTime = 60000 / this->GetMusicEdit()->GetBpmValue();
+					int time = object->GetBpmPage() * bpmTime * 4
+						+ bpmTime / this->GetMusicEdit()->GetLpbValue() * object->GetLPBIndex()
+						+ object->GetBPMIndex() * bpmTime;
+					if (this->GetMusic()->GetCurrentMusicTime() < time)
+					{
+						object->SetIsSound();
+					}
 				}
 			}
 		}
@@ -172,10 +179,20 @@ void StartMenu::AddNotes(NotesObject* notes)
 	for (; iter != mNotesObjects.end(); ++iter)
 	{
 		if (myBpmPage > (*iter)->GetBpmPage()) { continue; }
-		if (myBpm > (*iter)->GetBPMIndex()){continue;}
-		if (myLpb <= (*iter)->GetLPBIndex())
-		{
-			break;
+		else if (myBpmPage < (*iter)->GetBpmPage()) { break; }
+		else if (myBpmPage == (*iter)->GetBpmPage()) {
+			if (myBpm > (*iter)->GetBPMIndex()) { continue; }
+			else if (myBpm < (*iter)->GetBPMIndex()) { break; }
+			else if (myBpm == (*iter)->GetBPMIndex()) {
+				if (myLpb <= (*iter)->GetLPBIndex())
+				{
+					break;
+				}
+				else
+				{
+					continue;
+				}
+			}
 		}
 	}
 	mNotesObjects.insert(iter, notes);

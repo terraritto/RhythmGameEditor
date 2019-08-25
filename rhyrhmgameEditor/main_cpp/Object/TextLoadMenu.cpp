@@ -82,6 +82,9 @@ bool TextLoadMenu::FileExist()
 
 void TextLoadMenu::FileRead()
 {
+	//ファイル名を登録
+	mStartMenu->SetFileName(mFileName);
+
 	//ファイル読込み
 	std::ifstream ifs("Text\\" + mFileName);
 	std::string line;

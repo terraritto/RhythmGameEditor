@@ -15,7 +15,7 @@ EditFileMenu::EditFileMenu(Game* game, StartMenu* startMenu)
 EditFileMenu::~EditFileMenu()
 {
 	std::ofstream textFile;
-	textFile.open("Text\\" + mStartMenu->GetFileName(), std::ios::trunc);
+	textFile.open("Text\\" + mStartMenu->GetFileName(), std::ios::out);
 	//bpm lpb ‹Èƒtƒ@ƒCƒ‹–¼‚Ì‰£‚è‘‚«
 	textFile << mStartMenu->GetMusicName() << "," << mStartMenu->GetBPM() << ","
 		<< mStartMenu->GetLPB() << std::endl;

@@ -21,12 +21,16 @@ bool Game::Initialize()
 	ChangeWindowMode(TRUE);
 
 	SetGraphMode(1920, 1080, 32);
+	//SetGraphMode(1080, 1920, 32);
 	//SetGraphMode(768, 1024, 32);
 
 	// ＤＸライブラリの初期化
 	if (DxLib_Init() < 0) { return false; };
 
 	SetDrawScreen(DX_SCREEN_BACK);
+
+	//soundをメモリに載せるにはデフォルトでは不可能なので、追加
+	SetCreateSoundDataType(DX_SOUNDDATATYPE_MEMPRESS);
 
 	//initialize input system
 	mInputSystem = new InputSystem();

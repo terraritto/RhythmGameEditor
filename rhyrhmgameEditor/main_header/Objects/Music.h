@@ -10,6 +10,11 @@ public:
 		, mCurrentTime(0)
 		, mMusicHandle(0)
 		, x(10)
+		, mLineX(310)
+		, mLineY(130)
+		, mVolumeLineX(760)
+		, mVolume(0)
+		, mVolumeX(460)
 	{
 
 	}
@@ -30,4 +35,11 @@ private:
 	int mCurrentTime;
 	int mMusicHandle;
 	int x;
+
+	int mLineX;
+	int mLineY;
+
+	int mVolumeLineX;
+	int mVolume;
+	int mVolumeX;
 };

@@ -752,6 +752,8 @@ void MusicEdit::MakeWallNotesDown(int bpm, int lpb, int lane)
 
 void MusicEdit::MakeWallNotesUp(int bpm, int lpb, int lane)
 {
+	if (lane > 6) { return; } //6ˆÈã‚Í‘¶Ý‚µ‚È‚¢
+
 	for (auto object : mStartMenu->GetNoteObjects())
 	{
 		if ((bpm == object->GetBPMIndex() && lpb == object->GetLPBIndex() &&
@@ -836,17 +838,21 @@ void MusicEdit::MakeTraceNotesObject(int bpm, int lpb, int lane, bool trace)
 				{
 					return false;
 				}
-				else if (a.mBpm < b.mBpm)
+				else if (a.mBpmPage == b.mBpmPage)
 				{
-					return true;
-				}
-				else if (a.mBpm == b.mBpm)
-				{
-					if (a.mLpb < b.mLpb)
+					if (a.mBpm < b.mBpm)
 					{
 						return true;
 					}
+					else if (a.mBpm == b.mBpm) 
+					{
+						if (a.mLpb < b.mLpb)
+						{
+							return true;
+						}
+					}
 				}
+				
 				return false;
 				//((a.mBpm < b.mBpm) && (a.mLpb < b.mLpb) && (a.mBpmPage <= b.mBpmPage));
 			}
