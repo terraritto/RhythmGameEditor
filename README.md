@@ -2,7 +2,7 @@
 ![DxLib 2019_08_05 23_55_31](https://user-images.githubusercontent.com/28126083/62473908-b6daee00-b7dc-11e9-8bcd-14084261d470.png)
 
 
-## Music Editorとは？--------------------------------------
+## Music Editorとは？
 
 個人的に作成しているリズムゲームの譜面を作成するために作ったツールです。  
 なので、私が作っている譜面向けになっております。ご了承ください。  
@@ -25,6 +25,7 @@ Right key BPMのレーンを右にずらす
 r key     ColorをRedに変更  
 g key     ColorをGreenに変更  
 b key     ColorをBlueに変更  
+Escape key プログラムを終了
 
 譜面のグリッド   
 左クリックすることで配置可能  
@@ -44,13 +45,15 @@ FileLoad Textフォルダにあるファイルを.csvまで指定することで
 BPM 数字で指定する  
 LPB 数字で指定する  
 
+## フォルダについて
+Musicフォルダに利用したい音楽を入れてください.  　
+ここで、音楽ファイルでは.ogg .wavを使うのが好ましいです。  
+理由は.mp3では読み込む際にラグが発生することが確認されております。  
+何かしら解決法が見つかれば修正いたしますが、それを見つけるまでは許してください
+
 ## ダウンロード先
-[ダウンロード](https://www.amazon.co.jp/clouddrive/share/8N4jsZmzANleWi5zMhZIC67xdmSGF1PCLENhRt4J54M)
+[ダウンロード](https://www.amazon.co.jp/clouddrive/share/IlLaY1wxjosqOd9j7DRJX4pMy7lIkOhuqMkDnc6A69g)
 
-# 見つかってるエラー
-* 上書き保存が効かない
-* 上レーンのWallNotesの制約忘れ(WallNotesは1\~6なので、7\~12についての制約が必要)
-* 音楽読込みのところに.csv指定と書かれてる
-* mp3の読込みが出来るものとできないものがある(調査中)
-
-時間あるときに直します......
+#version
+ver.1.1に変わりました。  
+変更点は version.txt につけておいたのでそのファイルを見て確認して頂けるとありがたいです。
