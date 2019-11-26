@@ -52,7 +52,7 @@ Musicフォルダに利用したい音楽を入れてください.  　
 何かしら解決法が見つかれば修正いたしますが、それを見つけるまでは許してください
 
 ## ダウンロード先
-[ダウンロード](https://www.amazon.co.jp/clouddrive/share/IlLaY1wxjosqOd9j7DRJX4pMy7lIkOhuqMkDnc6A69g)
+[ダウンロード](https://www.amazon.co.jp/clouddrive/share/SVdQDmULyGnoGjBfcSkNkrlcbCXbsyWqrfzxpfJtJfk)
 
 ## version
 ver.1.1に変わりました。  
